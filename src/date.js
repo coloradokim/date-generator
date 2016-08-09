@@ -1,22 +1,16 @@
-function getMonday(startDate) {
-  var day = startDate.getDay()
+var moment = require('moment');
+
+function getWeeks(date) {
+  var startDate = new Date(date);
+  var day = date.getDay();
   var diffToMonday = startDate.getDate() - day + (day === 0 ? -6 : 1);
-    return new Date(startDate.setDate(diffToMonday));
+  var firstMonday =  new Date(startDate.setDate(diffToMonday));
+  var result = [];
+  do {
+    result.push(firstMonday.setDate(firstMonday.getDate() + 7));
+  } while (result.length < 52)
+  return result;
 }
-
-console.log(this.getMonday(1));
-
-
-
-// find last Monday (first column header)
-// continue to add 7 days to that date 52 times
-// for each time, add that new date to an array
-// result = an array that starts last Monday and goes until Monday a year from now
-
-// Hint
-// do {
-//} while (true);
-
-
+console.log(getWeeks(new Date(2016, 06, 26)));
 
 module.exports = getWeeks
