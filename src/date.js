@@ -7,7 +7,9 @@ function getWeeks(date) {
   do {
     result.push(new Date(firstMonday.setDate(firstMonday.getDate() + 7)));
   } while (result.length < 52)
-  return result;
+  return result.map(function(item) {
+    return item.toString()
+  })
 }
 console.log(getWeeks(new Date(2016, 06, 26)));
 
