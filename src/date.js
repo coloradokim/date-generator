@@ -8,7 +8,10 @@ function getWeeks(date) {
     result.push(new Date(firstMonday.setDate(firstMonday.getDate() + 7)));
   } while (result.length < 52)
   return result.map(function(item) {
-    return item.toString()
+    var month = item.getUTCMonth() + 1;
+    var day = item.getUTCDate();
+    var year = item.getUTCFullYear();
+      return year + "-0" + month + "-" + day
   })
 }
 console.log(getWeeks(new Date(2016, 06, 26)));

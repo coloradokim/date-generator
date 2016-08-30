@@ -1,5 +1,8 @@
-var month = dateObj.getUTCMonth() + 1; //months from 1-12
-var day = dateObj.getUTCDate();
-var year = dateObj.getUTCFullYear();
+var date = new Date()
 
-newdate = year + "/" + month + "/" + day;
+var month = date.getUTCMonth() + 1; 
+var day = date.getUTCDate();
+var year = date.getUTCFullYear();
+
+
+console.log(year + "-" + month + "-" + day)
