@@ -1,9 +1,9 @@
-const getWeeks = require('../src/date')
-const expect = require('chai').expect
+var getWeeks = require('../src/date')
+var expect = require('chai').expect
 
 describe('getWeeks', function () {
   it ('returns an array of 52 Mondays', function () {
-    var date = getWeeks(new Date(2016, 06, 26))
+    var date = getWeeks(new Date(2016, 07, 26))
     expect(date[0]).to.equal('2016-07-25')
     expect(date[1]).to.equal('2016-08-01')
     expect(date[2]).to.equal('2016-08-08')

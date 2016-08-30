@@ -1,5 +1,8 @@
 function getWeeks(date) {
+  console.log(date);
   var startDate = new Date(date);
+  console.log(startDate);
+  //the month is one greater than the actual month
   var day = date.getDay();
   var diffToMonday = startDate.getDate() - day + (day === 0 ? -6 : 1);
   var firstMonday =  new Date(startDate.setDate(diffToMonday));
@@ -11,10 +14,9 @@ function getWeeks(date) {
     var month = item.getUTCMonth() + 1;
     var day = item.getUTCDate();
     var year = item.getUTCFullYear();
-      return year + "-0" + month + "-" + day
+      return year + "-" + month + "-" + day
   })
 }
-console.log(getWeeks(new Date(2016, 06, 26)));
-
-
+// console.log(getWeeks(new Date(2016, 07, 26)));
+getWeeks(new Date(2016, 08, 30))
 module.exports = getWeeks
